@@ -8,7 +8,10 @@ public static class ReviewAnalyzer
     {
         string resultInfo = $"This analysis was run on {DateTime.Now.ToShortDateString()} at {DateTime.Now.ToShortTimeString()}.";
 
-        AnalysisResult analysis = new();
+        AnalysisResult analysis = new()
+        {
+            AnalysisResultInfo = resultInfo
+        };
 
         if (LastFiveReviewsFiveStarts(lastFiveReviews))
             analysis.Results.Add("Last five reviews in the category 'overall' have 5 stars.");
