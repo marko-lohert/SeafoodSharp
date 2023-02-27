@@ -1,0 +1,64 @@
+﻿@page "/ReviewAnalysis"
+@inject HttpClient Http
+
+<PageTitle>Seafood Sharp - Review Analysis</PageTitle>
+
+<h3 class="card-title">Review Analysis</h3>
+<br />
+
+@if (Analysis is not null)
+{
+    <table class="table table-light table-striped table-borderless">
+        <thead>
+            <tr>
+                <th>Analysis of 5 Last Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (string result in Analysis.Results)
+            {
+                <tr>
+                    <td>@result</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <table class="table table-success table-borderless w-25">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="2">Average of All Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Food</td>
+                <td>@Average.FoodAvg</td>
+            </tr>
+            <tr>
+                <td>Service</td>
+                <td>@Average.ServiceAvg</td>
+            </tr>
+            <tr>
+                <td>Ambiance</td>
+                <td>@Average.AmbianceAvg</td>
+            </tr>
+            <tr>
+                <td>Overall</td>
+                <td>@Average.OverallAvg</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Total reviews: @Average.TotalReviews</p>
+    <p>Average calculated on: @Average.DateTimeAvgCalculated</p>
+
+    <a class="btn-outline-primary" href="@ExportFileInfo?.ContentAPI" download="@ExportFileInfo?.Name" role="button" target="=_top">Export to JSON</a>
+
+    <div class="card mt-4 w-50">
+        <div class="card-body">
+            <h5 class="card-title">Review analysis info:</h5>
+            <p class="card-text">@Analysis.AnalysisResultInfo</p>
+        </div>
+    </div>
+}

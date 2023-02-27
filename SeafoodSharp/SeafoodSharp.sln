@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Server", "SeafoodSharp\Server\SeafoodSharp.Server.csproj", "{1E2A1A11-4998-4EE0-A534-D177A365E5AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Client", "SeafoodSharp\Client\SeafoodSharp.Client.csproj", "{02AA1166-D0E1-4331-8E1F-9A54B4293DA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Shared", "SeafoodSharp\Shared\SeafoodSharp.Shared.csproj", "{4ABE3192-582D-4BDD-B738-1B7EA766E126}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{597A8EB4-FCC6-4962-B5CA-3BC34D860C02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodSharp.UnitTests", "SeafoodSharp\UnitTests\SeafoodSharp.UnitTests\SeafoodSharp.UnitTests.csproj", "{979CA2F2-281F-4738-9D76-E23E1AE1D200}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E2A1A11-4998-4EE0-A534-D177A365E5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2A1A11-4998-4EE0-A534-D177A365E5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2A1A11-4998-4EE0-A534-D177A365E5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2A1A11-4998-4EE0-A534-D177A365E5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AA1166-D0E1-4331-8E1F-9A54B4293DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AA1166-D0E1-4331-8E1F-9A54B4293DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AA1166-D0E1-4331-8E1F-9A54B4293DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AA1166-D0E1-4331-8E1F-9A54B4293DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ABE3192-582D-4BDD-B738-1B7EA766E126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ABE3192-582D-4BDD-B738-1B7EA766E126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ABE3192-582D-4BDD-B738-1B7EA766E126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ABE3192-582D-4BDD-B738-1B7EA766E126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{979CA2F2-281F-4738-9D76-E23E1AE1D200} = {597A8EB4-FCC6-4962-B5CA-3BC34D860C02}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97AB4992-6C7D-4845-B804-6904C8E23C6F}
+	EndGlobalSection
+EndGlobal
