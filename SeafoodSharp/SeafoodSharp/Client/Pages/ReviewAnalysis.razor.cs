@@ -9,7 +9,7 @@ public partial class ReviewAnalysis
     AnalysisResult? Analysis { get; set; }
     ReviewsAverage Average { get; set; }
 
-    file? ExportFileInfo { get; set; }
+    ExportFileInfo? ExportFileInfo { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -37,13 +37,13 @@ public partial class ReviewAnalysis
 
 }
 
-public class file : IExportFileInfo
+public class ExportFileInfo : IExportFileInfo
 {
     public string? Name { get; set; }
     public string? ContentAPI { get; set; }
 }
 
-public interface IExportFileInfo
+file interface IExportFileInfo
 {
     string? Name { get; set; }
     string? ContentAPI { get; set; }
