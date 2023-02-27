@@ -5,13 +5,6 @@ public struct ReviewsAverage
     public ReviewsAverage(DateTime dateTimeAvgCalculated)
     {
         DateTimeAvgCalculated = dateTimeAvgCalculated;
-
-        FoodAvg = 0;
-        ServiceAvg = 0;
-        AmbianceAvg = 0;
-        OverallAvg = 0;
-
-        TotalReviews = 0;
     }
 
     public DateTime DateTimeAvgCalculated { get; set; }
