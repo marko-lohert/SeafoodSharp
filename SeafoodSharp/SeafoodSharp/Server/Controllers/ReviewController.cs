@@ -48,21 +48,21 @@ public class ReviewController : ControllerBase
             _ => "0 warnings"
         };
 
-        string averageReport = @$"
-            {{
-                ""review"": {{
-                    ""Food"": ""{reviewsAverage.FoodAvg}"",
-                    ""Service"": ""{reviewsAverage.ServiceAvg}"",
-                    ""Ambiance"": ""{reviewsAverage.AmbianceAvg}"",
-                    ""Overall"": ""{reviewsAverage.OverallAvg}""
-                }},
-                ""info"": {{
-                    ""TotalReviews"" : ""{reviewsAverage.TotalReviews}"",
-                    ""DateTimeAvgCalculated"" : ""{reviewsAverage.DateTimeAvgCalculated}""
-                }},
-                ""warning"" : ""{reportWarning}""
-            }}
-            ";
+        string averageReport = $$"""
+            {
+                "review": {
+                    "Food": "{{reviewsAverage.FoodAvg}}",
+                    "Service" : "{{reviewsAverage.ServiceAvg}}",
+                    "Ambiance" : "{{reviewsAverage.AmbianceAvg}}",
+                    "Overall" :"{{reviewsAverage.OverallAvg}}"
+                },
+                "info": {
+                    "TotalReviews" : "{{reviewsAverage.TotalReviews}}",
+                    "DateTimeAvgCalculated" : "{{reviewsAverage.DateTimeAvgCalculated}}"
+                },
+                "warning" : "{{reportWarning}}"
+            }
+            """;
 
         return averageReport;
     }
