@@ -82,9 +82,10 @@ public static class ReviewAnalyzer
 
         ReadOnlySpan<char> messageAllLowerCase = message.ToLower().AsSpan();
 
-        if (messageAllLowerCase.StartsWith("thank you") || messageAllLowerCase.StartsWith("thanks"))
-            return true;
-        else
-            return false;
+        return messageAllLowerCase switch
+        {
+            "thank you" or "thanks" => true,
+            _ => false
+        };
     }
 }
