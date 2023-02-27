@@ -27,35 +27,26 @@ public static class ReviewAnalyzer
 
     public static bool LastFiveReviewsAreFiveStarts(List<int> lastFiveReviews)
     {
-        for (int i = 0; i < 5; i++)
-        {
-            if (lastFiveReviews[i] != 5)
-                return false;
-        }
-
-        return true;
+        return lastFiveReviews is [5, 5, 5, 5, 5];
     }
 
     public static bool ReviewsAreGettingVeryGood(List<int> lastFiveReviews)
     {
-        return lastFiveReviews[0] >= 4 && lastFiveReviews[1] >= 3 && lastFiveReviews[4] <= 3;
+        return lastFiveReviews is [>= 4, >= 3, _, _, <= 3];
     }
 
     private static bool ReviewsEndedInExtreme(List<int> lastFiveReviews)
     {
-        return (lastFiveReviews[0] == 1 || lastFiveReviews[0] == 5);
+        return lastFiveReviews is [1 or 5, ..];
     }
 
     public static string ReviewsShortSummary(List<int> lastFiveReviews)
     {
-        int sum = 0;
-        for (int i = 1; i < 4; i++)
-        {
-            sum += lastFiveReviews[i];
-        }
-        double avg = sum / 3.0;
-
-        return $"Last five reviews started with {lastFiveReviews[0]} stars, and finished with {lastFiveReviews[4]} stars. The average of reviews in between first and last (not including first and last) is {avg} stars.";
+        int[] arrayReviews = lastFiveReviews.ToArray<int>();
+        if (arrayReviews is [var first, .. var midArray, int last])
+            return $"Last five reviews started with {first} stars, and finished with {last} stars. The average of reviews in between first and last (not including first and last) is {midArray.Average()} stars.";
+        else
+            return "There is not enough data to generate a short summary.";
     }
 
     public static string AnalyzeReviewMessage(Review review)
@@ -63,9 +54,8 @@ public static class ReviewAnalyzer
         if (review?.Comment is null or "")
             return string.Empty;
 
-        if (review.Comment[0] == '¿' && review.Comment.Length > 10 && review.Comment[review.Comment.Length - 1] == '?')
+        if (review.Comment is ['¿', .. { Length: > 8 } questionText, '?'])
         {
-            string questionText = review.Comment.Substring(1, review.Comment.Length - 2);
             return $"That comment seems like a question asked in Spanish. We'll translate \"{questionText}\". Thank you for your question!";
         }
 
