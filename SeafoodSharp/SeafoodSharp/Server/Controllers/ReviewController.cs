@@ -41,13 +41,6 @@ public class ReviewController : ControllerBase
     {
         ReviewsAverage reviewsAverage = GetReviewsAverage();
 
-        string reportWarning = reviewsAverage.TotalReviews switch
-        {
-            0 => "No reviews",
-            >= 1 and <= 30 => "Too few reviews. At least 30 reviews are necessary for calculating a meaningful average.",
-            _ => "0 warnings"
-        };
-
         string averageReport = $$"""
             {
                 "review": {
@@ -60,7 +53,12 @@ public class ReviewController : ControllerBase
                     "TotalReviews" : "{{reviewsAverage.TotalReviews}}",
                     "DateTimeAvgCalculated" : "{{reviewsAverage.DateTimeAvgCalculated}}"
                 },
-                "warning" : "{{reportWarning}}"
+                "warning" : "{{reviewsAverage.TotalReviews switch
+                                {
+                                    0 => "No reviews",
+                                    >= 1 and <= 30 => "Too few reviews. At least 30 reviews are necessary for calculating a meaningful average.",
+                                    _ => "0 warnings"
+                                }}}"
             }
             """;
 
