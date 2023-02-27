@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<LangVersion>11.0</LangVersion>	  
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Copyright>Copyright (c) 2023 Marko Lohert</Copyright>
+	<Description>A demo application that I use in my talk about C# 11 at a meetup or a conference.</Description>
+	<Authors>Marko Lohert</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+</Project>
