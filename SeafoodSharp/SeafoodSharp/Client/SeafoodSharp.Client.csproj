@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
 	<LangVersion>10.0</LangVersion>
@@ -7,9 +7,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
 	<Copyright>Copyright (c) 2023 Marko Lohert</Copyright>
-	<Description>A demo application that I use in my talk about C# 11 at a meetup or a conference.</Description>
+	<Description>A demo application that I use in my talks about C# 12 and C# 11 at conferences and meetups.</Description>
 	<Authors>Marko Lohert</Authors>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
