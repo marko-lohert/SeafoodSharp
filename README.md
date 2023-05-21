@@ -1,7 +1,7 @@
 # SeafoodSharp
-A demo application that I use in my talk about C# 11 at a meetup or a conference.
+A demo application that I use in my talks about C# 12 and C# 11 at conferences and meetups.
 
-New features of C# 11 I’m showing using this demo app for handling users’ review in (fictional) “Seafood Sharp” restaurant.
+New features of C# 12 and C# 11 I’m showing using this demo app for handling users’ review in (fictional) “Seafood Sharp” restaurant.
 
 
 # Seafood Sharp Restaurant
