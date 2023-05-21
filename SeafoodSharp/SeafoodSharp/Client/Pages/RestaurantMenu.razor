@@ -1,0 +1,31 @@
+﻿@page "/RestaurantMenu"
+@using SeafoodSharp.Shared;
+@inject HttpClient Http
+
+<PageTitle>Seafood Sharp - Menu</PageTitle>
+
+<h3 class="card-title">Menu</h3>
+<br />
+
+@if (Menu is not null)
+{
+    <table class="table table-light table-striped table-borderless w-50">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (RestaurantMenuItem menuItem in Menu.MenuItems)
+            {
+                <tr>
+                    <td>@menuItem.Name</td>
+                    <td>@menuItem.Description</td>
+                    <td>@menuItem.Price.FormattedText()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
