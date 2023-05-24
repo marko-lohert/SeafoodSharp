@@ -1,0 +1,29 @@
+﻿@page "/NewReview"
+@inject HttpClient Http
+
+<PageTitle>Seafood Sharp - New Review</PageTitle>
+
+<h3>New Review</h3>
+<br />
+
+<EditForm Model="@CustomersReview" OnSubmit="@SubmitReview" style="display: grid; grid-template-columns: 150px 350px; grid-row-gap: 10px;">
+    Food
+    <InputNumber @bind-Value="CustomersReview.Food" />
+    Service
+    <InputNumber @bind-Value="CustomersReview.Service" />
+    Ambiance
+    <InputNumber @bind-Value="CustomersReview.Ambiance" />
+    Overall
+    <InputNumber @bind-Value="CustomersReview.Overall" />
+    Comment:
+    <InputTextArea @bind-Value="CustomersReview.Comment" />
+
+    <button type="submit">Submit</button>
+
+    <div style="grid-column-start: 1; grid-column-end: span 2;">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+    </div>
+</EditForm>
+
+@ResultAnalyzeCustomersReview
