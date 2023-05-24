@@ -1,17 +1,12 @@
 ﻿namespace SeafoodSharp.Shared;
 
-public class Price
+public class Price(decimal amount, string currency)
 {
-    public decimal Amount { get; set; }
-    public string Currency { get; set; }
-
-    public Price(decimal amount, string currency)
-    {
-        Amount = amount;
-        Currency = currency;
-    }
+    public decimal Amount { get; set; } = amount;
+    public string Currency { get; set; } = currency;
 
     public Price()
+        : this(default, string.Empty)
     {
     }
 
