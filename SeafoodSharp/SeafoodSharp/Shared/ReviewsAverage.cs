@@ -1,13 +1,8 @@
 ﻿namespace SeafoodSharp.Shared;
 
-public struct ReviewsAverage
+public struct ReviewsAverage(DateTime dateTimeAvgCalculated)
 {
-    public ReviewsAverage(DateTime dateTimeAvgCalculated)
-    {
-        DateTimeAvgCalculated = dateTimeAvgCalculated;
-    }
-
-    public DateTime DateTimeAvgCalculated { get; set; }
+    public DateTime DateTimeAvgCalculated { get; set; } = dateTimeAvgCalculated;
 
     public float FoodAvg { get; set; }
     public float ServiceAvg { get; set; }
