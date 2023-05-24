@@ -20,11 +20,11 @@ public class RestaurantMenuItem(string name, string description, Price price, st
 
     public string FormattedText()
     {
-        var GetShortText = (string? text, int length) => text?.Length > length ? text[..length] : text;
+        var GetShortText = (string? text, int length = 50) => text?.Length > length ? text[..length] : text;
 
         StringBuilder formattedText = new();
 
-        formattedText.Append(GetShortText(Name, 50));
+        formattedText.Append(GetShortText(Name));
         formattedText.Append(" - ");
         if (Description is not (null or ""))
         {
@@ -33,7 +33,7 @@ public class RestaurantMenuItem(string name, string description, Price price, st
         }
         if (category is not (null or ""))
         {
-            formattedText.Append(GetShortText(category, 50));
+            formattedText.Append(GetShortText(category));
             formattedText.Append(" - ");
         }
 
