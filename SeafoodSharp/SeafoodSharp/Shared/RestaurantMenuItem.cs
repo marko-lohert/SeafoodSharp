@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using ShortInfo = (string name, decimal priceAmmount, string currencySymbol);
 
 namespace SeafoodSharp.Shared;
 
@@ -43,7 +44,7 @@ public class RestaurantMenuItem(string name, string description, Price price, st
         return formattedText.ToString();
     }
 
-    public (string name, decimal priceAmmount, string currencySymbol) GetShortInfo()
+    public ShortInfo GetShortInfo()
     {
         return (Name, Price.Amount, Price.Currency);
     }
