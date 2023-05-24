@@ -2,31 +2,20 @@
 
 namespace SeafoodSharp.Shared;
 
-public class RestaurantMenuItem
+public class RestaurantMenuItem(string name, string description, Price price, string category)
 {
-    public string Name { get; set; }
-    public string? Description { get; set; }
-    public Price Price { get; set; }
-    public string Category { get; set; }
-
-    public RestaurantMenuItem(string name, string description, Price price, string category)
-    {
-        Name = name;
-        Description = description;
-        Price = price;
-        Category = category;
-    }
+    public string Name { get; set; } = name;
+    public string? Description { get; set; } = description;
+    public Price Price { get; set; } = price;
 
     public RestaurantMenuItem()
+        : this(string.Empty, string.Empty, new Price(), string.Empty)
     {
     }
 
     public RestaurantMenuItem(string name, Price price)
+        : this(name, string.Empty, price, string.Empty)
     {
-        Name = name;
-        Description = string.Empty;
-        Price = price;
-        Category = string.Empty;
     }
 
     public string FormattedText()
@@ -42,9 +31,9 @@ public class RestaurantMenuItem
             formattedText.Append(GetShortText(Description, 200));
             formattedText.Append(" - ");
         }
-        if (Category is not (null or ""))
+        if (category is not (null or ""))
         {
-            formattedText.Append(GetShortText(Category, 50));
+            formattedText.Append(GetShortText(category, 50));
             formattedText.Append(" - ");
         }
         formattedText.Append(Price.FormattedText());
