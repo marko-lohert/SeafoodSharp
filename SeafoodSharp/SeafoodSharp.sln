@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Shared", "Seaf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{597A8EB4-FCC6-4962-B5CA-3BC34D860C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodSharp.UnitTests", "SeafoodSharp\UnitTests\SeafoodSharp.UnitTests\SeafoodSharp.UnitTests.csproj", "{979CA2F2-281F-4738-9D76-E23E1AE1D200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Client.UnitTests", "SeafoodSharp\UnitTests\SeafoodSharp.UnitTests\SeafoodSharp.Client.UnitTests.csproj", "{979CA2F2-281F-4738-9D76-E23E1AE1D200}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
