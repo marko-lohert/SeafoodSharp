@@ -10,7 +10,7 @@ public static class ReviewAnalyzer
 
         AnalysisResult analysis = new();
 
-        if (LastFiveReviewsFiveStarts(lastFiveReviews))
+        if (LastFiveReviewsAreFiveStarts(lastFiveReviews))
             analysis.Results.Add("Last five reviews in the category 'overall' have 5 stars.");
 
         if (ReviewsAreGettingVeryGood(lastFiveReviews))
@@ -25,7 +25,7 @@ public static class ReviewAnalyzer
         return analysis;
     }
 
-    public static bool LastFiveReviewsFiveStarts(List<int> lastFiveReviews)
+    public static bool LastFiveReviewsAreFiveStarts(List<int> lastFiveReviews)
     {
         for (int i = 0; i < 5; i++)
         {
