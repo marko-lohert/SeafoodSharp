@@ -41,7 +41,7 @@ public static class ReviewAnalyzer
         return lastFiveReviews[0] >= 4 && lastFiveReviews[1] >= 3 && lastFiveReviews[4] <= 3;
     }
 
-    private static bool ReviewsEndedInExtreme(List<int> lastFiveReviews)
+    public static bool ReviewsEndedInExtreme(List<int> lastFiveReviews)
     {
         return (lastFiveReviews[0] == 1 || lastFiveReviews[0] == 5);
     }
@@ -75,7 +75,7 @@ public static class ReviewAnalyzer
         return string.Empty;
     }
 
-    private static bool IsThankYouMessage(string message)
+    public static bool IsThankYouMessage(string message)
     {
         if (message == null)
             return false;
