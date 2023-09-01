@@ -80,7 +80,18 @@ public static class ReviewAnalyzer
         if (message == null)
             return false;
 
-        ReadOnlySpan<char> messageAllLowerCase = message.ToLower().AsSpan();
+        // We will use pattern matching Span char on a *constant* string,
+        // (for the purpose of demo in a conference/meetup talk)
+        // so take only the first part of string that may contain one of "thank you" messages that are accepted.
+        int endIndex = message.IndexOf('s');
+        if (endIndex == -1)
+        {
+            endIndex = message.IndexOf('u');
+            if (endIndex == -1)
+                return false;
+        }
+
+        ReadOnlySpan<char> messageAllLowerCase = message.ToLower()[..(endIndex + 1)].AsSpan();
 
         return messageAllLowerCase switch
         {
