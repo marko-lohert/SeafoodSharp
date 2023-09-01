@@ -100,4 +100,19 @@ public class RestaurantMenuItemUnitTests
         // Assert
         Assert.AreEqual(expected, actual);
     }
+
+    [TestMethod]
+    public void FormattedText_PriceNull()
+    {
+        // Arrange
+        RestaurantMenuItem menuItem = new("Tuna", price: null);
+        string expected = "Tuna - ";
+
+        // Act
+        string actual = menuItem.FormattedText();
+
+        // Assert
+        Assert.AreEqual(expected, actual);
+    }
+
 }

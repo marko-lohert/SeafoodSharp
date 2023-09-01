@@ -47,7 +47,9 @@ public class RestaurantMenuItem
             formattedText.Append(GetShortText(Category, 50));
             formattedText.Append(" - ");
         }
-        formattedText.Append(Price.FormattedText());
+
+        if (Price is not null)
+            formattedText.Append(Price.FormattedText());
 
         return formattedText.ToString();
     }
