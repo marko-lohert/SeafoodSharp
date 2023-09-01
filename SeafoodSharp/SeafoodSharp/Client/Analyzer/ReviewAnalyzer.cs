@@ -13,7 +13,7 @@ public static class ReviewAnalyzer
             AnalysisResultInfo = resultInfo
         };
 
-        if (LastFiveReviewsFiveStarts(lastFiveReviews))
+        if (LastFiveReviewsAreFiveStarts(lastFiveReviews))
             analysis.Results.Add("Last five reviews in the category 'overall' have 5 stars.");
 
         if (ReviewsAreGettingVeryGood(lastFiveReviews))
@@ -28,7 +28,7 @@ public static class ReviewAnalyzer
         return analysis;
     }
 
-    public static bool LastFiveReviewsFiveStarts(List<int> lastFiveReviews)
+    public static bool LastFiveReviewsAreFiveStarts(List<int> lastFiveReviews)
     {
         return lastFiveReviews is [5, 5, 5, 5, 5];
     }
@@ -38,7 +38,7 @@ public static class ReviewAnalyzer
         return lastFiveReviews is [>= 4, >= 3, _, _, <= 3];
     }
 
-    private static bool ReviewsEndedInExtreme(List<int> lastFiveReviews)
+    public static bool ReviewsEndedInExtreme(List<int> lastFiveReviews)
     {
         return lastFiveReviews is [1 or 5, ..];
     }
@@ -68,12 +68,23 @@ public static class ReviewAnalyzer
         return string.Empty;
     }
 
-    private static bool IsThankYouMessage(string message)
+    public static bool IsThankYouMessage(string message)
     {
         if (message == null)
             return false;
 
-        ReadOnlySpan<char> messageAllLowerCase = message.ToLower().AsSpan();
+        // We will use pattern matching Span char on a *constant* string,
+        // (for the purpose of demo in a conference/meetup talk)
+        // so take only the first part of string that may contain one of "thank you" messages that are accepted.
+        int endIndex = message.IndexOf('s');
+        if (endIndex == -1)
+        {
+            endIndex = message.IndexOf('u');
+            if (endIndex == -1)
+                return false;
+        }
+
+        ReadOnlySpan<char> messageAllLowerCase = message.ToLower()[..(endIndex + 1)].AsSpan();
 
         return messageAllLowerCase switch
         {

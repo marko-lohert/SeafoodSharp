@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Shared", "Seaf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{597A8EB4-FCC6-4962-B5CA-3BC34D860C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodSharp.UnitTests", "SeafoodSharp\UnitTests\SeafoodSharp.UnitTests\SeafoodSharp.UnitTests.csproj", "{979CA2F2-281F-4738-9D76-E23E1AE1D200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodSharp.Client.UnitTests", "SeafoodSharp\UnitTests\SeafoodSharp.UnitTests\SeafoodSharp.Client.UnitTests.csproj", "{979CA2F2-281F-4738-9D76-E23E1AE1D200}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodSharp.Shared.UnitTests", "SeafoodSharp\UnitTests\SeafoodSharp.Shared.UnitTests\SeafoodSharp.Shared.UnitTests.csproj", "{648C45E8-3DDD-46BC-9D9B-8444B7D751C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4ABE3192-582D-4BDD-B738-1B7EA766E126} = {4ABE3192-582D-4BDD-B738-1B7EA766E126}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +40,17 @@ Global
 		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{979CA2F2-281F-4738-9D76-E23E1AE1D200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{648C45E8-3DDD-46BC-9D9B-8444B7D751C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{648C45E8-3DDD-46BC-9D9B-8444B7D751C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{648C45E8-3DDD-46BC-9D9B-8444B7D751C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{648C45E8-3DDD-46BC-9D9B-8444B7D751C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{979CA2F2-281F-4738-9D76-E23E1AE1D200} = {597A8EB4-FCC6-4962-B5CA-3BC34D860C02}
+		{648C45E8-3DDD-46BC-9D9B-8444B7D751C4} = {597A8EB4-FCC6-4962-B5CA-3BC34D860C02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97AB4992-6C7D-4845-B804-6904C8E23C6F}
