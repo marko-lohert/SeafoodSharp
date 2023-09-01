@@ -9,7 +9,7 @@ public class BasicStatisticsReviewsUnitTests
     public void AvgValidReview_Reviews2To5()
     {
         // Arrange
-        int[] reviews = new[] { 2, 3, 4, 5 };
+        int[] reviews = [2, 3, 4, 5];
         decimal expected = 3.5m;
 
         // Act
@@ -26,9 +26,9 @@ public class BasicStatisticsReviewsUnitTests
 
         // To demonstrate a specific part of C# 12 feature "Collection expressions" (in the later branch of code),
         // the array of reviews is built by concatenating two arrays.  
-        int[] firstPartReviews = new[] { 2, 3 };
-        int[] secondPartReviews = new[] { 4, 5 };
-        int[] reviews = firstPartReviews.Concat(secondPartReviews).ToArray();
+        int[] firstPartReviews = [2, 3];
+        int[] secondPartReviews = [4, 5];
+        int[] reviews = [..firstPartReviews, ..secondPartReviews];
 
         int expected = 5;
 
@@ -46,7 +46,7 @@ public class BasicStatisticsReviewsUnitTests
 
         // To demonstrate a specific part of C# 12 feature "Collection expressions" (in the later branch of code),
         // Span<int> and stackalloc will be used to create an array of reviews.  
-        Span<int> reviews = stackalloc int[] { 2, 3, 4, 5 };
+        Span<int> reviews = [2, 3, 4, 5];
 
         int expected = 2;
 
@@ -61,7 +61,7 @@ public class BasicStatisticsReviewsUnitTests
     public void AvgValidReview_2Valid2InvalidReviews()
     {
         // Arrange
-        int[] reviews = new[] { 3, 5, 0, 10 };
+        int[] reviews = [3, 5, 0, 10];
         decimal expected = 4m;
 
         // Act
@@ -75,7 +75,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MaxValidReview_2Valid2InvalidReviews()
     {
         // Arrange
-        int[] reviews = new[] { 3, 5, 0, 10 };
+        int[] reviews = [3, 5, 0, 10];
         int expected = 5;
 
         // Act
@@ -89,7 +89,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MinValidReview_2Valid2InvalidReviews()
     {
         // Arrange
-        int[] reviews = new[] { 3, 5, 0, 10 };
+        int[] reviews = [3, 5, 0, 10];
         int expected = 3;
 
         // Act
@@ -103,7 +103,7 @@ public class BasicStatisticsReviewsUnitTests
     public void AvgValidReview_AllMinReviews()
     {
         // Arrange
-        int[] reviews = new[] { 1, 1, 1, 1 };
+        int[] reviews = [1, 1, 1, 1];
         decimal expected = 1m;
 
         // Act
@@ -117,7 +117,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MaxValidReview_AllMinReviews()
     {
         // Arrange
-        int[] reviews = new[] { 1, 1, 1, 1 };
+        int[] reviews = [1, 1, 1, 1];
         int expected = 1;
 
         // Act
@@ -131,7 +131,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MinValidReview_AllMinReviews()
     {
         // Arrange
-        int[] reviews = new[] { 1, 1, 1, 1 };
+        int[] reviews = [1, 1, 1, 1];
         int expected = 1;
 
         // Act
@@ -145,7 +145,7 @@ public class BasicStatisticsReviewsUnitTests
     public void AvgValidReview_AllMaxReviews()
     {
         // Arrange
-        int[] reviews = new[] { 5, 5, 5, 5 };
+        int[] reviews = [5, 5, 5, 5];
         decimal expected = 5m;
 
         // Act
@@ -159,7 +159,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MaxValidReview_AllMaxReviews()
     {
         // Arrange
-        int[] reviews = new[] { 5, 5, 5, 5 };
+        int[] reviews = [5, 5, 5, 5];
         int expected = 5;
 
         // Act
@@ -173,7 +173,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MinValidReview_AllMaxReviews()
     {
         // Arrange
-        int[] reviews = new[] { 5, 5, 5, 5 };
+        int[] reviews = [5, 5, 5, 5];
         int expected = 5;
 
         // Act
@@ -187,7 +187,7 @@ public class BasicStatisticsReviewsUnitTests
     public void AvgValidReview_AllInvalidReviews()
     {
         // Arrange
-        int[] reviews = new[] { 0, -1, 6, 10 };
+        int[] reviews = [0, -1, 6, 10];
         decimal expected = 0m;
 
         // Act
@@ -201,7 +201,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MaxValidReview_AllInvalidReviews()
     {
         // Arrange
-        int[] reviews = new[] { 0, -1, 6, 10 };
+        int[] reviews = [0, -1, 6, 10];
         int expected = 0;
 
         // Act
@@ -215,7 +215,7 @@ public class BasicStatisticsReviewsUnitTests
     public void MinValidReview_AllInvalidReviews()
     {
         // Arrange
-        int[] reviews = new[] { 0, -1, 6, 10 };
+        int[] reviews = [0, -1, 6, 10];
         int expected = 0;
 
         // Act
