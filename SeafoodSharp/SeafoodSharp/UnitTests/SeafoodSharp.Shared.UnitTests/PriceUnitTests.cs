@@ -4,11 +4,11 @@ namespace SeafoodSharp.Shared.UnitTests;
 public class PriceUnitTests
 {
     [TestMethod]
-    public void FormattedText_1_Euro()
+    public void FormattedText_Amount1_CurrencyEuro()
     {
         // Arrange
-        Price price = new(1, "Euro");
-        string expected = "1 Euro";
+        Price price = new(1, "€");
+        string expected = "1 €";
 
         // Act
         string actual = price.FormattedText();
@@ -18,7 +18,7 @@ public class PriceUnitTests
     }
     
     [TestMethod]
-    public void FormattedText_0_NullCurrency()
+    public void FormattedText_Amount0_NullCurrency()
     {
         // Arrange
         Price price = new(1, null);
@@ -32,7 +32,7 @@ public class PriceUnitTests
     }
 
     [TestMethod]
-    public void FormattedText_2_EmptyCurrency()
+    public void FormattedText_Amount2_EmptyCurrency()
     {
         // Arrange
         Price price = new(2, string.Empty);
